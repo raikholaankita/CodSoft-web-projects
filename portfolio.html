@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita - Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; padding: 0.5rem; }
+        nav a:hover { color: #bdc3c7; }
+        .hero { background: #7f8c8d; color: white; text-align: center; padding: 8rem 1rem 4rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.3rem; }
+        section { padding: 4rem 1rem; max-width: 1000px; margin: 0 auto; }
+        h2 { text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2rem; }
+        .about { background: #f5f5f5; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+        .skill-box { background: white; padding: 1.5rem; text-align: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .project-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .project-card h3 { color: #2c3e50; margin-bottom: 0.5rem; }
+        .contact { background: #f5f5f5; text-align: center; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 1.5rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav { gap: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Ankita</h1>
+        <p>Web Developer | HTML, CSS, JavaScript</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto;">
+            Hi, I'm Ankita. I'm a web development student passionate about creating clean, responsive websites. 
+            I enjoy learning new technologies and building projects that solve real problems.
+        </p>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box"><h3>HTML</h3></div>
+            <div class="skill-box"><h3>CSS</h3></div>
+            <div class="skill-box"><h3>JavaScript</h3></div>
+            <div class="skill-box"><h3>Responsive Design</h3></div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Landing Page</h3>
+                <p>Created a responsive landing page for CodSoft internship using HTML and CSS with personalized content and modern design.</p>
+            </div>
+            <div class="project-card">
+                <h3>Calculator</h3>
+                <p>Built a fully working calculator using HTML, CSS, and JavaScript that performs basic arithmetic operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p style="font-size: 1.1rem;">Email: ankita@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ankita. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

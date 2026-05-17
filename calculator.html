@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal Calculator</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.calculator {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    width: 320px;
+}
+
+.display {
+    background: #1a1a1a;
+    color: white;
+    font-size: 48px;
+    text-align: right;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #404040;
+    color: white;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.clear {
+    background: #ff3b30;
+}
+
+.delete {
+    background: #007aff;
+}
+
+.equals {
+    background: #34c759;
+}
+
+.zero {
+    grid-column: span 2; /* 0 button 2 column lega */
+}
+</style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="delete" onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="equals" onclick="calculate()">=</button>
+            
+            <button class="zero" onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal()">.</button>
+        </div>
+    </div>
+
+<script>
+let display = document.getElementById('display');
+let currentInput = '0';
+
+function updateDisplay() {
+    display.textContent = currentInput;
+}
+
+function appendNumber(num) {
+    if (currentInput === '0') currentInput = num;
+    else currentInput += num;
+    updateDisplay();
+}
+
+function appendOperator(op) {
+    currentInput += op;
+    updateDisplay();
+}
+
+function appendDecimal() {
+    currentInput += '.';
+    updateDisplay();
+}
+
+function clearDisplay() {
+    currentInput = '0';
+    updateDisplay();
+}
+
+function deleteLast() {
+    currentInput = currentInput.slice(0, -1);
+    if (currentInput === '') currentInput = '0';
+    updateDisplay();
+}
+
+function calculate() {
+    try {
+        currentInput = eval(currentInput).toString();
+        updateDisplay();
+    } catch {
+        currentInput = 'Error';
+        updateDisplay();
+        setTimeout(() => {
+            currentInput = '0';
+            updateDisplay();
+        }, 1000);
+    }
+}
+</script>
+</body>
+</html>
