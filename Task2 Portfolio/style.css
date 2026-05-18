@@ -8,42 +8,54 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    color: #333;
 }
 
-.container {
+nav {
     background: white;
-    padding: 40px;
+    padding: 20px;
+    position: fixed;
+    left: 20px;
+    top: 50px;
     border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none; /* bullets hatane ke liye */
+}
+
+nav li {
+    margin-bottom: 15px;
+}
+
+nav a {
+    display: block;
+    background: #667eea;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
     text-align: center;
-    max-width: 600px;
+}
+
+nav a:hover {
+    background: #764ba2;
+}
+
+/* Content ko right me shift karne ke liye */
+section, h1, h2, p {
+    margin-left: 200px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 800px;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-a {
-    display: inline-block;
-    background: #667eea;
+    font-size: 48px;
+    background: transparent;
     color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-a:hover {
-    background: #764ba2;
+    margin-top: 50px;
 }
